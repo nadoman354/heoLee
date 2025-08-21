@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d994baedec3a0fa4fb8fc9890ae92695, type: 3}
+  m_Name: DropScatterSettings
+  m_EditorClassIdentifier: 
+  localTries: 14
+  relaxPasses: 3
+  baseAngleJitter: 23
+  stepAngle: 9.5
+  radialStepBase: 0.06
+  radialStepScale: 0.02
+  resolveStep: 0.18
+  resolveSteps: 16
+  fallbackStep: 0.2
+  fallbackSteps: 24
