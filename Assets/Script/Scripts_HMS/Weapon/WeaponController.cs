@@ -5,7 +5,7 @@ using UnityEngine;
 /// 1. WeaponView와 함께 추가 해야 하는 컴포넌트이다.
 /// 2. 순수 클래스인 무기가 정보를 제공 받을 수 있는 어댑터 역할을 한다.
 /// 3. 해당 클래스와 Capabilities.cs 문서는 강하게 연결 되어 있다.
-/// 4. Weapon은 필요한 정보를 Init 시점에 WeaponController로 부터 꺼내 온다. [Caps 변수를 사용]
+/// 4. IWeaponLogic은 필요한 정보를 Init 시점에 WeaponController로 부터 꺼내 온다. [Caps 변수를 사용]
 /// 5. 무기의 최종 초기화를 담당한다. => Inventory에서 WeaponController를 호출한다.
 /// </summary>
 public sealed class WeaponController : MonoBehaviour

@@ -15,7 +15,7 @@ public class DroppedWeaponFactory : MonoBehaviour
     {
         if (!metaCatalog || !metaCatalog.TryGetWeapon(id, out var meta))
         {
-            Debug.LogError($"[DroppedWeaponFactory] Weapon meta not found: {id}");
+            Debug.LogError($"[DroppedWeaponFactory] IWeaponLogic meta not found: {id}");
             return null;
         }
         var go = PoolManager.Spawn(prefab, spawnPos, Quaternion.identity);
@@ -24,7 +24,7 @@ public class DroppedWeaponFactory : MonoBehaviour
         return d;
     }
 
-    public DroppedItem CreateFromWeapon(Weapon w, Vector3 spawnPos)
+    public DroppedItem CreateFromWeapon(IWeaponLogic w, Vector3 spawnPos)
     {
         var go = PoolManager.Spawn(prefab, spawnPos, Quaternion.identity);
         var d = go.GetComponent<DroppedWeapon>();

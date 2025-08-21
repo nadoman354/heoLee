@@ -18,15 +18,15 @@ public class DroppedFactoryHub : MonoBehaviour, IDroppedFactoryHub
     public DroppedItem SpawnFromId(ItemType t, string id, Vector3 spawnPos)
         => t switch
         {
-            ItemType.Weapon => weaponFactory.CreateFromId(id, spawnPos),
-            ItemType.Relic => relicFactory.CreateFromId(id, spawnPos),
+            ItemType.IWeaponLogic => weaponFactory.CreateFromId(id, spawnPos),
+            ItemType.BaseRelic => relicFactory.CreateFromId(id, spawnPos),
             ItemType.Consumable => consumableFactory.CreateFromId(id, spawnPos),
             _ => null
         };
 
-    public DroppedItem SpawnFromWeapon(Weapon w, Vector3 spawnPos)
+    public DroppedItem SpawnFromWeapon(IWeaponLogic w, Vector3 spawnPos)
         => weaponFactory.CreateFromWeapon(w, spawnPos);
 
-    public DroppedItem SpawnFromRelic(Relic r, Vector3 spawnPos)
+    public DroppedItem SpawnFromRelic(BaseRelic r, Vector3 spawnPos)
         => relicFactory.CreateFromRelic(r, spawnPos);
 }

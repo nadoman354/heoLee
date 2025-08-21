@@ -2,7 +2,7 @@
 
 internal class WeaponFactory
 {
-    internal Weapon Create(SO_WeaponMetaData meta)
+    internal IWeaponLogic Create(SO_WeaponMetaData meta)
     {
         throw new NotImplementedException();
     }

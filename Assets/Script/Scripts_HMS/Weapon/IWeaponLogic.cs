@@ -15,4 +15,5 @@ public interface IWeaponLogic : System.IDisposable, IModifierSink
     void Skill1KeyUp();
     void Skill2KeyUp();
     IModifierSink GetSkill(int skillIndex);
+    SO_WeaponMetaData GetMetaData();
 }

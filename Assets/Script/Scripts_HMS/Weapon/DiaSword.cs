@@ -21,9 +21,9 @@ public class DiaSword : IWeaponLogic, IAttackableWeapon, ISkillAnimDriven
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
             OnKeyDown();
-        if(Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.V))
         {
             Skill1KeyDown();
         }
@@ -32,7 +32,7 @@ public class DiaSword : IWeaponLogic, IAttackableWeapon, ISkillAnimDriven
     public void PlayAttackAnim()
     {
         view.TriggerAttackAnim(curAttackCount);
-    } 
+    }
     public void AddAtkCount()
     {
         curAttackCount += 1;
@@ -46,7 +46,7 @@ public class DiaSword : IWeaponLogic, IAttackableWeapon, ISkillAnimDriven
         }
         if (curAttackCount >= Effect.Length) return; // 방어
 
-        GameObject effect = GameObject.Instantiate(Effect[curAttackCount], view.transform.parent.position + view.transform.parent.right * effectSpawnOffset, view.transform.parent.rotation );
+        GameObject effect = GameObject.Instantiate(Effect[curAttackCount], view.transform.parent.position + view.transform.parent.right * effectSpawnOffset, view.transform.parent.rotation);
         var col = effect.GetComponent<BoxCollider2D>();
         var center = col.transform.TransformPoint(col.offset);                 // 로컬→월드
         var worldSize = Vector2.Scale(col.size, (Vector2)col.transform.lossyScale);
@@ -73,8 +73,8 @@ public class DiaSword : IWeaponLogic, IAttackableWeapon, ISkillAnimDriven
 
         view.SetAnimator(metaData.attackClipOverride, new SetAnimatorInfo());
 
-        baseSkills[0] = SkillFactory.Instance.CreateSkill(new SkillContext(metaData.skillData[0], ctx.caps));
-        baseSkills[1] = SkillFactory.Instance.CreateSkill(new SkillContext(metaData.skillData[1], ctx.caps));
+        baseSkills[0] = LogicFactoryHub.SkillFactory.Create(new SkillContext(metaData.skillData[0], ctx.caps));
+        baseSkills[1] = LogicFactoryHub.SkillFactory.Create(new SkillContext(metaData.skillData[1], ctx.caps));
     }
 
     public void OnKeyDown()
@@ -92,7 +92,7 @@ public class DiaSword : IWeaponLogic, IAttackableWeapon, ISkillAnimDriven
 
     public void Tick(float dt)
     {
-        foreach(ISkillLogic baseSkill in baseSkills)
+        foreach (ISkillLogic baseSkill in baseSkills)
         {
             baseSkill.Tick(dt);
         }
@@ -149,7 +149,9 @@ public class DiaSword : IWeaponLogic, IAttackableWeapon, ISkillAnimDriven
 
     public IModifierSink GetSkill(int skillIndex)
     {
-        if(skillIndex < 0 || skillIndex >= baseSkills.Length) throw new IndexOutOfRangeException(nameof(skillIndex));
+        if (skillIndex < 0 || skillIndex >= baseSkills.Length) throw new IndexOutOfRangeException(nameof(skillIndex));
         return baseSkills[skillIndex];
     }
+
+    public SO_WeaponMetaData GetMetaData() => metaData;
 }

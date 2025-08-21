@@ -42,10 +42,10 @@ public class WeaponContainer : IWeaponContainer
     /// </summary>
     /// 
   
-    public void AddWeapon(IWeaponLogic newWeapon, SO_WeaponMetaData metaData)
+    public bool AddWeapon(IWeaponLogic newWeapon, SO_WeaponMetaData metaData)
     {
-        if (newWeapon == null) { Debug.LogError("New Weapon Missing"); return; }
-        if (weapon == null) { Debug.LogError("Slot Missing"); return; }
+        if (newWeapon == null) { Debug.LogError("New IWeaponLogic Missing"); return false; }
+        if (weapon == null) { Debug.LogError("Slot Missing"); return false; }
 
         // 1) 빈 슬롯 탐색
         int empty = FindEmptySlot();
@@ -57,11 +57,11 @@ public class WeaponContainer : IWeaponContainer
             // 규칙 2: 획득한 무기가 하나뿐이면(= 지금까지 비어있었으면) 0번 장착 유지
             // - 첫 무기라면 empty는 0이므로 자연스럽게 0번 장착 상태가 됨
             // - 두 번째 무기면 equip 변경 없음
-            return;
         }
 
         // 2) 가득 찬 경우 → 현재 장착 무기를 버리고 그 자리에 새 무기
         ReplaceEquipped(newWeapon, metaData);
+        return true;
     }
 
     /// <summary>현재 장착 무기를 버리고 같은 슬롯에 새 무기 삽입</summary>

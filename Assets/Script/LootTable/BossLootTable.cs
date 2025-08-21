@@ -13,7 +13,7 @@ public class BossLootEntry
 [CreateAssetMenu(menuName = "Game/BossLootTable")]
 public class BossLootTable : ScriptableObject
 {
-    [Header("Relic 등급 확률(스테이지별)")]
+    [Header("BaseRelic 등급 확률(스테이지별)")]
     public List<StageRelicRarityChance> rarityChances = new();
 
     [Header("Stage 1 Loot")]
@@ -66,8 +66,8 @@ public class BossLootTable : ScriptableObject
         Debug.Log($"[BossLootTable] ID만 새로고침 완료: {name}");
     }
 
-    // === 에디터: Relic 등급 확률 기본값 채우기(없을 때만) ===
-    [ContextMenu("Relic 등급 확률 기본값 채우기(1~3스테이지)")]
+    // === 에디터: BaseRelic 등급 확률 기본값 채우기(없을 때만) ===
+    [ContextMenu("BaseRelic 등급 확률 기본값 채우기(1~3스테이지)")]
     private void Editor_FillDefaultRelicRarity()
     {
         if (rarityChances == null) rarityChances = new List<StageRelicRarityChance>();
@@ -92,7 +92,7 @@ public class BossLootTable : ScriptableObject
         Ensure(3, 0.50f, 0.35f, 0.15f);
 
         UnityEditor.EditorUtility.SetDirty(this);
-        Debug.Log($"[BossLootTable] Relic 등급 확률 기본값 설정 완료: {name}");
+        Debug.Log($"[BossLootTable] BaseRelic 등급 확률 기본값 설정 완료: {name}");
     }
 #endif
 }

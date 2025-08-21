@@ -22,7 +22,7 @@ public sealed class LogicWeaponFactory : ILogicWeaponFactory
         if (!_typeCache.TryGetValue(key, out var t))
         {
             if (!FactoryTypeResolver.TryResolveType(key, typeof(IWeaponLogic), out t))
-                throw new InvalidOperationException($"Weapon logic type '{key}' not found or invalid.");
+                throw new InvalidOperationException($"IWeaponLogic logic type '{key}' not found or invalid.");
             _typeCache[key] = t;
         }
 

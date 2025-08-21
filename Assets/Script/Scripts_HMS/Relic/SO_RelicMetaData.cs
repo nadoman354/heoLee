@@ -1,4 +1,5 @@
 using UnityEngine;
+using enums;
 
 [CreateAssetMenu(fileName = "MetaData_Relic", menuName = "Game/MetaData/RelicType/Base")]
 public class SO_RelicMetaData : ScriptableObject
@@ -7,8 +8,10 @@ public class SO_RelicMetaData : ScriptableObject
     [Space(10)]
     public Sprite sprite;
     public string name;
-    public string description;   
+    public string description;
+    public RarityType rarity;
     public SO_StatData stat;
+    
     [Space(10)]
     [TypeRef(typeof(BaseRelic))]
     [SerializeField] private string _className;

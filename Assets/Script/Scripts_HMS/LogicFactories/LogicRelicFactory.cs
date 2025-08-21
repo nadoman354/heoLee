@@ -24,7 +24,7 @@ public class LogicRelicFactory : ILogicRelicFactory
         if (!_typeCache.TryGetValue(key, out var t))
         {
             if (!FactoryTypeResolver.TryResolveType(key, typeof(BaseRelic), out t))
-                throw new InvalidOperationException($"Relic logic type '{key}' not found or invalid.");
+                throw new InvalidOperationException($"BaseRelic logic type '{key}' not found or invalid.");
             _typeCache[key] = t;
         }
 

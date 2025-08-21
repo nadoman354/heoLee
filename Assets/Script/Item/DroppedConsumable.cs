@@ -15,7 +15,7 @@ public class DroppedConsumable : DroppedItem
     {
         if (!CanInteract(player)) return;
         var inv = player?.Inventory; if (inv == null) return;
-
-        if (inv.TryAddConsumable(meta)) PoolManager.Despawn(gameObject);
+        
+        if (inv.TryAddConsumable(meta, out int index)) PoolManager.Despawn(gameObject);
     }
 }

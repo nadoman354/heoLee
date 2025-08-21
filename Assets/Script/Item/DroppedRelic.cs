@@ -3,8 +3,8 @@ using UnityEngine;
 public class DroppedRelic : DroppedItem
 {
     public SO_RelicMetaData meta;
-    public Relic original;
-    [SerializeField] private RelicFactory relicFactory;
+    public BaseRelic original;
+    [SerializeField] private LogicRelicFactory relicFactory;
 
     public override void Setup(ScriptableObject data)
     {
@@ -13,7 +13,7 @@ public class DroppedRelic : DroppedItem
         SetSprite(meta ? meta.sprite : null);
     }
 
-    public void SetupOriginal(Relic r)
+    public void SetupOriginal(BaseRelic r)
     {
         original = r;
         meta = r.GetMetaData();
@@ -26,7 +26,7 @@ public class DroppedRelic : DroppedItem
         if (!CanInteract(player)) return;
         var inv = player?.Inventory; if (inv == null) return;
 
-        var v = original ?? relicFactory.Create(meta);
+        var v = original ?? relicFactory.Create(meta, player.Inventory);
         if (inv.TryAddRelic(v)) PoolManager.Despawn(gameObject);
     }
 }

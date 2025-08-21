@@ -3,7 +3,7 @@ using System;
 public interface IWeaponContainer : IDisposable
 {
     IWeaponLogic Current { get; }
-    void AddWeapon(IWeaponLogic logic, SO_WeaponMetaData meta);
+    bool AddWeapon(IWeaponLogic logic, SO_WeaponMetaData meta);
     void DropWeapon(int idx);
     void SwapWeapon();
     void Tick(float dt);

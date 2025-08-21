@@ -241,9 +241,9 @@ public sealed class Inventory : IDisposable
     }
 
     // 무기를 장착하는 코드 ( 생성은 끝났음을 가정 )
-    public void AcquireWeapon(IWeaponLogic logic, SO_WeaponMetaData meta)
+    public bool TryAddWeapon(IWeaponLogic logic, SO_WeaponMetaData meta)
     {
-        Weapons.AddWeapon(logic, meta);
+        return Weapons.AddWeapon(logic, meta);
         // 컨테이너가 SlotsChanged/EquippedChanged를 올리므로,
         // 아래 호출은 없어도 되지만, View 라우팅을 안전하게 갱신하고 싶다면 유지
     }
@@ -265,11 +265,11 @@ public sealed class Inventory : IDisposable
 
     // -------- 소비 아이템 ----------
     public void UseConsumableItem(int idx) => Consumables.TryUse(idx);
-    public bool TryAddConsumableItem(IConsumableItem item, out int placedIndex) => Consumables.TryAdd(item, out placedIndex);
+    public bool TryAddConsumable(IConsumableItem item, out int placedIndex) => Consumables.TryAdd(item, out placedIndex);
 
 
 
     // 유물 경유 헬퍼(원래 의도대로 얇게)
-    internal void AddRelic(BaseRelic relic) => Relics.AddRelic(relic);
+    internal bool TryAddRelic(BaseRelic relic) => Relics.AddRelic(relic);
     internal void RemoveRelic(BaseRelic relic) => Relics.RemoveRelic(relic);
 }

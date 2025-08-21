@@ -59,8 +59,8 @@ public class UnlockService : MonoBehaviour, IUnlockMask
         idToType = new Dictionary<string, ItemType>(512);
         if (!metaCatalog) return;
 
-        foreach (var w in metaCatalog.Weapons) if (w && !string.IsNullOrEmpty(w.id)) idToType[w.id] = ItemType.Weapon;
-        foreach (var r in metaCatalog.Relics) if (r && !string.IsNullOrEmpty(r.id)) idToType[r.id] = ItemType.Relic;
+        foreach (var w in metaCatalog.Weapons) if (w && !string.IsNullOrEmpty(w.id)) idToType[w.id] = ItemType.IWeaponLogic;
+        foreach (var r in metaCatalog.Relics) if (r && !string.IsNullOrEmpty(r.id)) idToType[r.id] = ItemType.BaseRelic;
         foreach (var c in metaCatalog.Consumables) if (c && !string.IsNullOrEmpty(c.id)) idToType[c.id] = ItemType.Consumable;
     }
 }

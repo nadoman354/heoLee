@@ -1,9 +1,9 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Meta_Relic_Targeted", menuName = "Game/MetaData/RelicType/Relic (Targeted)")]
+[CreateAssetMenu(fileName = "Meta_Relic_Targeted", menuName = "Game/MetaData/RelicType/BaseRelic (Targeted)")]
 public class SO_RelicMetaData_HasTarget : SO_RelicMetaData
 {
-    [Header("Target Weapon / Skill")]
+    [Header("Target IWeaponLogic / Skill")]
     [SerializeField] private SO_WeaponMetaData targetWeapon; // 전용 대상 무기
     [SerializeField] private int targetSkillIndex = -1;      // -1이면 무기 전체, 0/1이면 해당 스킬
 

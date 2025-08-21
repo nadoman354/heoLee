@@ -38,8 +38,8 @@ public static class LootTableEditorUtility
         t.entries = new List<NormalLootEntry>
         {
             new() { itemType = ItemType.None, probability = noneProb },
-            new() { itemType = ItemType.Weapon, probability = weaponProb, possibleItemIds = GetValidIdsByType(ItemType.Weapon) },
-            new() { itemType = ItemType.Relic, probability = relicProb, possibleItemIds = GetValidIdsByType(ItemType.Relic) },
+            new() { itemType = ItemType.IWeaponLogic, probability = weaponProb, possibleItemIds = GetValidIdsByType(ItemType.IWeaponLogic) },
+            new() { itemType = ItemType.BaseRelic, probability = relicProb, possibleItemIds = GetValidIdsByType(ItemType.BaseRelic) },
             new() { itemType = ItemType.Consumable, probability = consumProb, possibleItemIds = GetValidIdsByType(ItemType.Consumable) },
         };
         UnityEditor.EditorUtility.SetDirty(t);

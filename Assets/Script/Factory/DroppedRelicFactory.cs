@@ -14,7 +14,7 @@ public class DroppedRelicFactory : MonoBehaviour
     {
         if (!metaCatalog || !metaCatalog.TryGetRelic(id, out var meta))
         {
-            Debug.LogError($"[DroppedRelicFactory] Relic meta not found: {id}");
+            Debug.LogError($"[DroppedRelicFactory] BaseRelic meta not found: {id}");
             return null;
         }
         var go = PoolManager.Spawn(prefab, spawnPos, Quaternion.identity);
@@ -23,7 +23,7 @@ public class DroppedRelicFactory : MonoBehaviour
         return d;
     }
 
-    public DroppedItem CreateFromRelic(Relic r, Vector3 spawnPos)
+    public DroppedItem CreateFromRelic(BaseRelic r, Vector3 spawnPos)
     {
         var go = PoolManager.Spawn(prefab, spawnPos, Quaternion.identity);
         var d = go.GetComponent<DroppedRelic>();

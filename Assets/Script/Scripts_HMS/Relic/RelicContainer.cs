@@ -59,8 +59,9 @@ public class RelicContainer : IRelicContainer
             new HealthChangeContext(h.Current - amount, h.Current, h.Max, HealthChangeReason.Heal)));
     }
 
-    public void AddRelic(BaseRelic relic)
+    public bool AddRelic(BaseRelic relic)
     {
+
         relics.Add(relic);
 
         // 인터페이스 수집 (RelicHook만)
@@ -80,6 +81,7 @@ public class RelicContainer : IRelicContainer
 
         // 장착 직후 현재 체력 상태에 따른 즉시 평가가 필요하면 한 번 더 방송
         // TriggerRelics<IOnHpChanged>(r => r.OnHpChanged(player, new HealthChangeContext(player.health.Current, player.health.Current, player.health.Max, HealthChangeReason.Init)));
+        return true;
     }
 
     public void RemoveRelic(BaseRelic relic)

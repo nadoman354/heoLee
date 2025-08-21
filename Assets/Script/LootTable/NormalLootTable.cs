@@ -13,7 +13,7 @@ public class NormalLootEntry
 [CreateAssetMenu(menuName = "Game/NormalLootTable")]
 public class NormalLootTable : ScriptableObject
 {
-    [Header("Relic 전용: 스테이지별 등급 확률")]
+    [Header("BaseRelic 전용: 스테이지별 등급 확률")]
     public List<StageRelicRarityChance> rarityChances = new();
 
     [Header("드롭 테이블 라인(디자이너 관리)")]
@@ -52,8 +52,8 @@ public class NormalLootTable : ScriptableObject
         Debug.Log($"[NormalLootTable] ID만 새로고침 완료: {name}");
     }
 
-    // === 에디터: Relic 등급 확률 기본값 채우기(없을 때만) ===
-    [ContextMenu("Relic 등급 확률 기본값 채우기(1~3스테이지)")]
+    // === 에디터: BaseRelic 등급 확률 기본값 채우기(없을 때만) ===
+    [ContextMenu("BaseRelic 등급 확률 기본값 채우기(1~3스테이지)")]
     private void Editor_FillDefaultRelicRarity()
     {
         if (rarityChances == null) rarityChances = new List<StageRelicRarityChance>();
@@ -78,7 +78,7 @@ public class NormalLootTable : ScriptableObject
         Ensure(3, 0.50f, 0.35f, 0.15f);
 
         UnityEditor.EditorUtility.SetDirty(this);
-        Debug.Log($"[NormalLootTable] Relic 등급 확률 기본값 설정 완료: {name}");
+        Debug.Log($"[NormalLootTable] BaseRelic 등급 확률 기본값 설정 완료: {name}");
     }
 #endif
 }

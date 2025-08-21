@@ -41,14 +41,14 @@ public class Player : MonoBehaviour, IModifierSink
         health.Update();
     }
 
-    public void AddRelic(BaseRelic relic) => inventory.AddRelic(relic);
+    public void AddRelic(BaseRelic relic) => inventory.TryAddRelic(relic);
     public void RemoveRelic(BaseRelic relic) => inventory.RemoveRelic(relic);
 
     // 무기 장착 스크립트. 무기 생성은 DroppedWeapon이 수행 후 inv에 전달!
-    public void AcquireWeapon(IWeaponLogic logic, SO_WeaponMetaData meta) => inventory.AcquireWeapon(logic, meta);
+    public void AcquireWeapon(IWeaponLogic logic, SO_WeaponMetaData meta) => inventory.TryAddWeapon(logic, meta);
     public void SwapWeapon() => inventory.SwapWeapon();
 
     //-------- 소비 아이템 ----------
     public void UseConsumableItem(int idx) => inventory.UseConsumableItem(idx);
-    bool TryAddConsumableItem(IConsumableItem item, out int placedIndex) => inventory.TryAddConsumableItem(item, out placedIndex);
+    bool TryAddConsumableItem(IConsumableItem item, out int placedIndex) => inventory.TryAddConsumable(item, out placedIndex);
 }

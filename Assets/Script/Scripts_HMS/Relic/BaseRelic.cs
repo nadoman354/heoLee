@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BaseRelic
@@ -9,6 +10,11 @@ public class BaseRelic
     { 
         this.metaData = metaData;
         this.statData = metaData.stat;
+    }
+
+    internal SO_RelicMetaData GetMetaData()
+    {
+        return metaData;
     }
 }
 public abstract class BaseRelic<TMeta> : BaseRelic where TMeta : SO_RelicMetaData

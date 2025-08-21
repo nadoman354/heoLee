@@ -15,6 +15,6 @@ public interface IUnlockMask
 public interface IDroppedFactoryHub
 {
     DroppedItem SpawnFromId(ItemType type, string id, Vector3 spawnPos);
-    DroppedItem SpawnFromWeapon(Weapon w, Vector3 spawnPos);
-    DroppedItem SpawnFromRelic(Relic r, Vector3 spawnPos);
+    DroppedItem SpawnFromWeapon(IWeaponLogic w, Vector3 spawnPos);
+    DroppedItem SpawnFromRelic(BaseRelic r, Vector3 spawnPos);
 }

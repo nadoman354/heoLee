@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class ConsumableData : ScriptableObject, IConsumableItem
+public abstract class SO_ConsumableMetaData : ScriptableObject, IConsumableItem
 {
     public string id;
     public Sprite sprite;

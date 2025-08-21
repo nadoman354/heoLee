@@ -72,10 +72,10 @@ public class ResourcesItemMetaCatalog : ScriptableObject, IItemMetaCatalog
         var list = new List<string>();
         switch (type)
         {
-            case ItemType.Weapon:
+            case ItemType.IWeaponLogic:
                 foreach (var x in weapons) if (!string.IsNullOrEmpty(x.id)) list.Add(x.id);
                 break;
-            case ItemType.Relic:
+            case ItemType.BaseRelic:
                 foreach (var x in relics) if (!string.IsNullOrEmpty(x.id)) list.Add(x.id);
                 break;
             case ItemType.Consumable:
@@ -109,8 +109,8 @@ public class ResourcesItemMetaCatalog : ScriptableObject, IItemMetaCatalog
     {
         wMap = new(); rMap = new(); cMap = new(); typeMap = new();
 
-        foreach (var x in weapons) if (x && !string.IsNullOrEmpty(x.id)) { wMap[x.id] = x; typeMap[x.id] = ItemType.Weapon; }
-        foreach (var x in relics) if (x && !string.IsNullOrEmpty(x.id)) { rMap[x.id] = x; typeMap[x.id] = ItemType.Relic; }
+        foreach (var x in weapons) if (x && !string.IsNullOrEmpty(x.id)) { wMap[x.id] = x; typeMap[x.id] = ItemType.IWeaponLogic; }
+        foreach (var x in relics) if (x && !string.IsNullOrEmpty(x.id)) { rMap[x.id] = x; typeMap[x.id] = ItemType.BaseRelic; }
         foreach (var x in consumables) if (x && !string.IsNullOrEmpty(x.id)) { cMap[x.id] = x; typeMap[x.id] = ItemType.Consumable; }
     }
 

@@ -6,4 +6,6 @@ public static class LogicFactoryHub
     public static ILogicWeaponFactory WeaponFactory => weaponFactory;
     private static ILogicRelicFactory relicFactory = new LogicRelicFactory();
     public static ILogicRelicFactory RelicFactory => relicFactory;
+    private static ILogicSkillFactory skillFactory = new LogicSkillFactory();
+    public static ILogicSkillFactory SkillFactory => skillFactory;
 }
