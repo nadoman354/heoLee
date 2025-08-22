@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fda872104b140e4d99dd4b54ef9849f, type: 3}
   m_Name: MetaData_WindRelic
   m_EditorClassIdentifier: 
-  id: 
-  sprite: {fileID: 0}
-  name: 
-  description: 
-  rarity: 0
-  stat: {fileID: 0}
-  _className: 
+  id: 2
+  sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  name: "\uC2E0\uC18D\uC758 \uC720\uBB3C"
+  description: "\uACF5\uACA9\uC18D\uB3C4\uAC00 {AtkSpeed}%\uC99D\uAC00\uD569\uB2C8\uB2E4."
+  rarity: 1
+  stat: {fileID: 11400000, guid: b81d729dbc9f2134abda5c3329e3d767, type: 2}
+  _className: WindRelic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fda872104b140e4d99dd4b54ef9849f, type: 3}
   m_Name: MetaData_HealthRelic
   m_EditorClassIdentifier: 
-  id: 
-  sprite: {fileID: 0}
-  name: 
-  description: 
+  id: 1
+  sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  name: "\uCCB4\uB825\uC720\uBB3C"
+  description: "\uCCB4\uB825\uC744{MaxHp}\uB192\uC5EC\uC90D\uB2C8\uB2E4."
   rarity: 0
-  stat: {fileID: 0}
-  _className: 
+  stat: {fileID: 11400000, guid: 1a7acd41e6cc9394f912951ec02bc2ad, type: 2}
+  _className: HealthRelic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

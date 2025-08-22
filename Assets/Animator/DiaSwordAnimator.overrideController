@@ -7,11 +7,15 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: DiaSwordAnimator
-  m_Controller: {fileID: 9100000, guid: 4ce56d9ffb81dd44da0f2790cf4da572, type: 2}
+  m_Controller: {fileID: 9100000, guid: e3e1435c2fafdfd43801557fdee51437, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: f8f849330929c004499a60e2845dfe59, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: f8f849330929c004499a60e2845dfe59, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: dc164c320d77f3d49adc9b25699767d8, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: dc164c320d77f3d49adc9b25699767d8, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 6f71f52bbf768d5409b52d624cc1e131, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 6f71f52bbf768d5409b52d624cc1e131, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a09178368c24c174dbfdb93f204cfdf5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a09178368c24c174dbfdb93f204cfdf5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 16a401b028dc6d048b545fe6f11e8bc1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 16a401b028dc6d048b545fe6f11e8bc1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 717f178e92e2e004fa513ff07c92e16c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 717f178e92e2e004fa513ff07c92e16c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7182614ac0087fa4c946f4f805e21ec5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7182614ac0087fa4c946f4f805e21ec5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c252fc437a046cb49b5b537f9a54db84, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c252fc437a046cb49b5b537f9a54db84, type: 2}

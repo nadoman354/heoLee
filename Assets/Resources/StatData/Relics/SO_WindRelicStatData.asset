@@ -13,11 +13,5 @@ MonoBehaviour:
   m_Name: SO_WindRelicStatData
   m_EditorClassIdentifier: 
   statList:
-  - name: HealthCondition
-    value: 0
-  - name: Damage
-    value: 0
-  - name: MaxHp
-    value: 0
   - name: AtkSpeed
-    value: 0
+    value: 0.3
