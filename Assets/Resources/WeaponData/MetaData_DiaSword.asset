@@ -9,11 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 767571edadee7b5419026e5847c66b59, type: 3}
-  m_Name: MetaData_Weapon
+  m_Script: {fileID: 11500000, guid: 7aac81587178dfb4f885280c2c6ff861, type: 3}
+  m_Name: MetaData_DiaSword
   m_EditorClassIdentifier: 
-  id: a
+  id: 
   sprite: {fileID: 0}
   name: 
   description: 
-  className: 
+  stat: {fileID: 0}
+  attackClipOverride: {fileID: 0}
+  spriteClipOverride: {fileID: 0}
+  zRotationOffset: 0
+  skillData:
+  - {fileID: 0}
+  - {fileID: 0}
+  _className: 
+  MaxAtkCount: 0
+  AtkEffectList: []
