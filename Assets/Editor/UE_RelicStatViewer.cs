@@ -2,8 +2,8 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(SO_SkillMetaData), true)]
-public class UE_SKillStatViewer : Editor
+[CustomEditor(typeof(SO_RelicMetaData), true)]
+public class UE_RelicStatViewer : Editor
 {
     SerializedProperty relicProp;
 

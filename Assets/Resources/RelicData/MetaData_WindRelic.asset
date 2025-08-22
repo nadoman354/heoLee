@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b2a36ab792ca34189534e8e3aa6f32, type: 3}
-  m_Name: MetaData_Relic
+  m_Script: {fileID: 11500000, guid: 5fda872104b140e4d99dd4b54ef9849f, type: 3}
+  m_Name: MetaData_WindRelic
   m_EditorClassIdentifier: 
-  id: 1
+  id: 
   sprite: {fileID: 0}
   name: 
   description: 
   rarity: 0
-  className: 
+  stat: {fileID: 0}
+  _className: 

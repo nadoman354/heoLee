@@ -10,6 +10,7 @@ public class BaseRelic
     { 
         this.metaData = metaData;
         this.statData = metaData.stat;
+        this.inv = inv;
     }
 
     internal SO_RelicMetaData GetMetaData()

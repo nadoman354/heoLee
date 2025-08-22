@@ -37,7 +37,7 @@ public class StatBlock
         else
             baseStats.Add(name, value);
         SetDirty(name);
-        OnStatChanged(name);
+        if (OnStatChanged != null) OnStatChanged(name);
     }
     public float GetStat(string name)
     {
@@ -62,7 +62,7 @@ public class StatBlock
         }
 
         SetDirty(mod.targetStat);
-        OnStatChanged(mod.targetStat);
+        if(OnStatChanged != null) OnStatChanged(mod.targetStat);
     }
     public void RemoveModifier(Modifier mod)
     {
@@ -79,7 +79,7 @@ public class StatBlock
                 break;
         }
         SetDirty(mod.targetStat);
-        OnStatChanged(mod.targetStat);
+        if (OnStatChanged != null) OnStatChanged(mod.targetStat);
     }
     public void ReCalcStat(string target)
     {
