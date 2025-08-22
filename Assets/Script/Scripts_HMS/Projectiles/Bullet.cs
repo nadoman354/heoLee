@@ -4,7 +4,7 @@ using static UnityEngine.UI.ContentSizeFitter;
 
 public interface IDamageable
 {
-    void TakeDamage(int dmg);
+    void TakeDamage(float dmg);
 }
 public enum BulletFitMode { FitInside, Fill, MatchWidth, MatchHeight }
 

@@ -38,7 +38,7 @@ public class Player : MonoBehaviour, IModifierSink
     {
         //RelicTest();
         inventory.Tick(Time.deltaTime);
-        health.Update();
+        health.Tick();
     }
 
     public void AddRelic(BaseRelic relic) => inventory.TryAddRelic(relic);
