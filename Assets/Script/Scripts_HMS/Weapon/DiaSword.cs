@@ -71,7 +71,7 @@ public class DiaSword : IWeaponLogic, IAttackableWeapon, ISkillAnimDriven
         MaxAttackCount = metaData.MaxAtkCount;
         Effect = metaData.AtkEffectList;
 
-        view.SetAnimator(metaData.attackClipOverride, new SetAnimatorInfo());
+        view.SetAnimator(metaData.attackClipOverride, new SetAnimatorInfo(metaData.zRotationOffset), metaData.spriteClipOverride);
 
         baseSkills[0] = LogicFactoryHub.SkillFactory.Create(new SkillContext(metaData.skillData[0], ctx.caps));
         baseSkills[1] = LogicFactoryHub.SkillFactory.Create(new SkillContext(metaData.skillData[1], ctx.caps));

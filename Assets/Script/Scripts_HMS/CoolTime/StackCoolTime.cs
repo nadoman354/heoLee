@@ -13,6 +13,8 @@ public class StackCoolTime : BaseCoolTime
     {
         coolTimeType = SkillCoolTimeType.Stack;
         baseCoolTime = BaseCoolTime;
+        if (maxStack <= 0)
+            maxStack = 1;
         this.maxStack = maxStack;
         stack = 0;
     }

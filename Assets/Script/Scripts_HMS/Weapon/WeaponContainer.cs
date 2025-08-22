@@ -114,7 +114,7 @@ public class WeaponContainer : IWeaponContainer
         weaponView.BindHandlers(onAtk, onS1, onS2);
 
         // 애니 오버라이드/스킨 적용이 필요하면 여기서
-        weaponView.SetAnimator(_metas[idx].attackClipOverride, new SetAnimatorInfo());
+        weaponView.SetAnimator(_metas[idx].attackClipOverride, new SetAnimatorInfo(logic.GetMetaData().zRotationOffset), _metas[idx].spriteClipOverride);
     }
 
     // 입력 처리 예

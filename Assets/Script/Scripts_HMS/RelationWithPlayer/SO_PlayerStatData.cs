@@ -33,4 +33,3 @@ public class SO_PlayerStatData : SO_StatData
         statList.Add(new Stat(Stats.BasicPlayerStat.MaxHp, 100));
     }
 }
-
