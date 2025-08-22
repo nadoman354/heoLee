@@ -23,9 +23,10 @@ public class DroppedWeapon : DroppedItem
     public override void OnPlayerInteract(Player player)
     {
         if (!CanInteract(player)) return;
+        ICapabilities capabilities = player.WeaponController.Caps;
+        WeaponView view = player.WeaponController.View;
+        var w = original ?? LogicFactoryHub.WeaponFactory.Create(meta, view, capabilities);
         var inv = player?.Inventory; if (inv == null) return;
-
-/*        var w = original ?? LogicFactoryHub.WeaponFactory.Create(meta);*/
         if (inv.TryAddWeapon(w, meta)) PoolManager.Despawn(gameObject);
     }
 }

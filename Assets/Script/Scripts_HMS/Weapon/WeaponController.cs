@@ -18,6 +18,7 @@ public sealed class WeaponController : MonoBehaviour
     [SerializeField] Camera cam;
 
     IWeaponContainer weaponContainer => player.Inventory.Weapons;
+    public WeaponView View => view;
 
     IWeaponLogic logic;
     ICapabilities caps;
@@ -42,11 +43,11 @@ public sealed class WeaponController : MonoBehaviour
             .Add<ICollisionQuery>(new Physics2DQuery());
 
     }
-    public void CreateWeapon(SO_WeaponMetaData meta)
-    {
-        // 2) 로직 생성(POCO) + 초기화(캡/메타만)
-        logic = LogicFactoryHub.WeaponFactory.Create(meta, view, caps);   // 생성 + 초기화
+    //public void CreateWeapon(SO_WeaponMetaData meta)
+    //{
+    //    // 2) 로직 생성(POCO) + 초기화(캡/메타만)
+    //    logic = LogicFactoryHub.WeaponFactory.Create(meta, view, caps);   // 생성 + 초기화
 
-        weaponContainer.AddWeapon(logic, meta);// 인벤토리에 추가
-    }
+    //    weaponContainer.AddWeapon(logic, meta);// 인벤토리에 추가
+    //}
 }
