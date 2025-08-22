@@ -60,5 +60,7 @@ public class Player : MonoBehaviour, IModifierSink
     {
         if (Input.GetMouseButtonDown(0))
             inventory.Weapons.OnKeyDown();
+        if (Input.GetMouseButtonDown(1))
+            inventory.Weapons.Skill1KeyDown();
     }
 }

@@ -9,6 +9,9 @@ public interface IWeaponContainer : IDisposable
     void Tick(float dt);
     void OnKeyDown();
     void OnKeyUp();
+
+    void Skill1KeyDown();
+    void Skill2KeyDown();
     void Skill1KeyUp();
     void Skill2KeyUp();
     IWeaponLogic FindByMeta(SO_WeaponMetaData meta);
