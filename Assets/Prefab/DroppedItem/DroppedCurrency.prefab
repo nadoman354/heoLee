@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4532504085735881955}
   - component: {fileID: 1638728958492513068}
   - component: {fileID: 2736459820544116685}
-  - component: {fileID: 2312339102991347188}
+  - component: {fileID: -9038518057456456750}
   m_Layer: 0
-  m_Name: DroppedWeapon
+  m_Name: DroppedCurrency
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +135,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2312339102991347188
+--- !u!114 &-9038518057456456750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,11 +144,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1897477819788965065}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03c945aa0ec9bd1478872c31076e7bd4, type: 3}
+  m_Script: {fileID: 11500000, guid: 7be5eec41e5982c4688a441e2cc0ee61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  interactCollider: {fileID: 0}
+  spriteRenderer: {fileID: 2736459820544116685}
+  interactCollider: {fileID: 1638728958492513068}
   launchPower: 4
   dropDuration: 0.6
   spinBaseDegrees: 540

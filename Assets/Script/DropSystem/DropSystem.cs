@@ -1,8 +1,7 @@
-using DG.Tweening.Core.Easing;
-using enums;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using enums; // ItemType, RarityType
 
 public class DropSystem : MonoBehaviour
 {
@@ -31,6 +30,14 @@ public class DropSystem : MonoBehaviour
     [SerializeField] private float bossRMin = 0.8f;
     [SerializeField] private float bossRMax = 2.2f;
 
+    // RNG 도메인 문자열(충돌 방지)
+    private const string DOMAIN_NORMAL = "drop_normal";
+    private const string DOMAIN_BOSS = "drop_boss";
+
+    // 폴백용 로컬 엔트로피(혹시 GameManager 없을 때)
+    private int _localDropEntropy = 0;
+    private int _localBossEntropy = 0;
+
     void Awake()
     {
         if (I && I != this) { Destroy(gameObject); return; }
@@ -43,12 +50,28 @@ public class DropSystem : MonoBehaviour
         if (!metaCatalog) metaCatalog = ResourcesItemMetaCatalog.LoadDefault();
     }
 
+    // ========= 편의 오버로드(엔트로피 자동) =========
+    public void DropNormal(Vector3 center, NormalLootTable table)
+    {
+        int stage = GameManager.I?.CurrentStage ?? 1;
+        int entropy = GameManager.I?.NextDropEntropy() ?? (_localDropEntropy++);
+        DropNormal(center, table, stage, entropy);
+    }
+
+    public void DropBoss(Vector3 center, BossLootTable table)
+    {
+        int stage = GameManager.I?.CurrentStage ?? 1;
+        int entropy = GameManager.I?.NextDropEntropy() ?? (_localBossEntropy++);
+        DropBoss(center, table, stage, entropy);
+    }
+
     // ================= Normal =================
     /// <summary>노말: 라인 1개 가중치 추첨 → None이면 미드롭, 아니면 해당 라인의 풀에서 1개</summary>
     public void DropNormal(Vector3 center, NormalLootTable table, int stage, int entropy)
     {
         if (table == null || table.entries == null || table.entries.Count == 0) return;
-        var r = rng.GetScoped("drop_normal", stage, entropy);
+
+        var r = rng.GetScoped(DOMAIN_NORMAL, stage, entropy);
 
         var line = RollNormalLine(table.entries, r);
         if (line == null || line.itemType == ItemType.None) return;
@@ -69,7 +92,10 @@ public class DropSystem : MonoBehaviour
 
         string id = pool[r.Next(pool.Count)];
 
-        var landing = ScatterPlanner2D.GenerateValid(1, center, r, normalRMin, normalRMax, landingMinSep, dropBlockMask, landingClearance)[0];
+        var landing = ScatterPlanner2D.GenerateValid(
+            1, center, r, normalRMin, normalRMax, landingMinSep, dropBlockMask, landingClearance
+        )[0];
+
         var item = hub.SpawnFromId(line.itemType, id, center) as DroppedItem;
         item?.DropTo(landing, r);
     }
@@ -82,7 +108,8 @@ public class DropSystem : MonoBehaviour
     public void DropBoss(Vector3 center, BossLootTable table, int stage, int entropy)
     {
         if (table == null) return;
-        var r = rng.GetScoped("drop_boss", stage, entropy);
+
+        var r = rng.GetScoped(DOMAIN_BOSS, stage, entropy);
 
         var entries = GetStageEntries(table, stage);
         if (entries == null || entries.Count == 0) return;
@@ -97,9 +124,11 @@ public class DropSystem : MonoBehaviour
         }
         if (total <= 0) return;
 
-        var landings = ScatterPlanner2D.GenerateValid(total, center, r, bossRMin, bossRMax, landingMinSep, dropBlockMask, landingClearance);
-        int k = 0;
+        var landings = ScatterPlanner2D.GenerateValid(
+            total, center, r, bossRMin, bossRMax, landingMinSep, dropBlockMask, landingClearance
+        );
 
+        int k = 0;
         foreach (var p in planned)
         {
             for (int i = 0; i < p.count; i++)

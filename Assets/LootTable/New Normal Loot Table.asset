@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c674c50dcc2e04c8aa983754eeccdd, type: 3}
+  m_Name: New Normal Loot Table
+  m_EditorClassIdentifier: 
+  rarityChances:
+  - stage: 1
+    rarityChances:
+    - rarity: 0
+      probability: 0.8
+    - rarity: 1
+      probability: 0.18
+    - rarity: 2
+      probability: 0.02
+  - stage: 2
+    rarityChances:
+    - rarity: 0
+      probability: 0.6
+    - rarity: 1
+      probability: 0.3
+    - rarity: 2
+      probability: 0.1
+  - stage: 3
+    rarityChances:
+    - rarity: 0
+      probability: 0.5
+    - rarity: 1
+      probability: 0.35
+    - rarity: 2
+      probability: 0.15
+  entries:
+  - probability: 0.65
+    itemType: 0
+    possibleItemIds: []
+  - probability: 0.05
+    itemType: 1
+    possibleItemIds:
+    - DiaSword
+  - probability: 0.05
+    itemType: 2
+    possibleItemIds:
+    - 1
+    - 2
+  - probability: 0.25
+    itemType: 3
+    possibleItemIds:
+    - 6

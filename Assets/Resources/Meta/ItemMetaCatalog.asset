@@ -15,19 +15,17 @@ MonoBehaviour:
   weaponPath: WeaponData
   relicPath: RelicData
   consumablePath: ConsumableData
+  currencyPath: CurrencyData
+  fieldItemPath: FieldItemData
   weapons:
-  - {fileID: 11400000, guid: fdc635fd168d5e1419ecf0ee8c70783e, type: 2}
-  - {fileID: 11400000, guid: 43e360bc44f80694dabd6ca4e5cd041a, type: 2}
-  - {fileID: 11400000, guid: 1556fe45b16269f47bccb123c3d44e63, type: 2}
+  - {fileID: 11400000, guid: 30cd69a0c47df954e81a83da9d91c28a, type: 2}
   relics:
   - {fileID: 11400000, guid: 546929d3de8525348b29d83525d42c44, type: 2}
-  - {fileID: 11400000, guid: 02d5d0becad10ac47accdcac7535a895, type: 2}
-  - {fileID: 11400000, guid: bce005a3d50f9164683424ff41822256, type: 2}
-  - {fileID: 11400000, guid: 88bb7d74ae874284aa0ca4960b66a8cf, type: 2}
-  - {fileID: 11400000, guid: 70ab22b6138b98b4bb2ce4a640b81ab9, type: 2}
-  - {fileID: 11400000, guid: c576db9102076314b8024d9b3f1b3d3c, type: 2}
-  - {fileID: 11400000, guid: b759917ec0021ad48991ac99affadaf3, type: 2}
+  - {fileID: 11400000, guid: 8d032d7d0294eee4bbf82044f50d4277, type: 2}
   consumables:
-  - {fileID: 11400000, guid: 625585a1553aeb545adb3cb520b96bee, type: 2}
-  - {fileID: 11400000, guid: 7c3a90ac75db694409abf65883946318, type: 2}
-  - {fileID: 11400000, guid: 8fd4953da18fb9a4f94c21bdc0255255, type: 2}
+  - {fileID: 11400000, guid: fbb084b2079307546b3f066b56f47268, type: 2}
+  currencies:
+  - {fileID: 11400000, guid: 38aef2680d03895498359d3b7ace7544, type: 2}
+  fieldItems:
+  - {fileID: 11400000, guid: 1e4cde75683079f4e99ffa70a5d49956, type: 2}
+  - {fileID: 11400000, guid: 1e0721a9cff364048a6ef56aa50a3433, type: 2}
