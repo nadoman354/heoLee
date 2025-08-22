@@ -62,7 +62,7 @@ public sealed class Health
         }
     }
 
-    public void Update()
+    public void Tick()
     {
         // 재생(초당 회복) 예: RegenPerSec 키 사용
         float regen = _stats.GetStat("HealthRegenPerSec");

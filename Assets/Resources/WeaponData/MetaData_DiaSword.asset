@@ -17,9 +17,9 @@ MonoBehaviour:
   name: "\uB2E4\uC774\uC544 \uAC80"
   description: "\uB2E4\uC774\uC544 \uB450 \uAC1C\uC640 \uB9C9\uB300\uAE30 \uD558\uB098"
   stat: {fileID: 11400000, guid: e7e455a66ff0a19418beaf446cf4fa71, type: 2}
-  attackClipOverride: {fileID: 0}
+  attackClipOverride: {fileID: 22100000, guid: 0511c6c73ce674340870505d405b8572, type: 2}
   spriteClipOverride: {fileID: 0}
-  zRotationOffset: 45
+  zRotationOffset: -45
   skillData:
   - {fileID: 11400000, guid: e3cd43d1fc7337748928b95b666222e2, type: 2}
   - {fileID: 11400000, guid: e3cd43d1fc7337748928b95b666222e2, type: 2}

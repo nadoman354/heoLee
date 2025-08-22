@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class DiaSword : IWeaponLogic, IAttackableWeapon, ISkillAnimDriven
+public class DiaSword : IWeaponLogic, IAttackableWeapon, ISkillAnimDriven, IModifierSink
 {
     [SerializeField]
     SO_SwordMetaData metaData;

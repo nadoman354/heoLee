@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Resources/FieldItemData/MetaData_FieldItem 1.asset.meta
 guid: 1e0721a9cff364048a6ef56aa50a3433
+========
+guid: 2bdeab7cc021d544cb6a9d30b24acf76
+>>>>>>>> b8b5a7324497d79deaf49f5745f7b518715acf32:Assets/Resources/RelicData/MetaData_HealthRelic.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

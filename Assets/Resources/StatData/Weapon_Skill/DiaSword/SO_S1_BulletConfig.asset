@@ -17,14 +17,14 @@ MonoBehaviour:
   spriteScale: {x: 1, y: 1}
   materialOverride: {fileID: 0}
   colliderType: 0
-  circleRadius: 0.1
+  circleRadius: 1
   boxSize: {x: 0.1, y: 0.1}
   capsuleDirection: 0
   capsuleSize: {x: 0.1, y: 0.2}
   polygonPoints: []
   speed: 6
   lifetime: 4
-  damage: 1
+  damage: 100
   hitMask:
     serializedVersion: 2
     m_Bits: 0

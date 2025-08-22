@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/LootTable/New Normal Loot Table.asset.meta
+guid: 02bf466a3085e234885e116b24331643
+========
+guid: 1a7acd41e6cc9394f912951ec02bc2ad
+>>>>>>>> b8b5a7324497d79deaf49f5745f7b518715acf32:Assets/Resources/StatData/Relics/SO_HealthRelicData.asset.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

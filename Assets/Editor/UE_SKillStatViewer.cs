@@ -27,7 +27,7 @@ public class UE_SKillStatViewer : Editor
         if (stat != null)
         {
             EditorGUILayout.Space();
-            EditorGUILayout.LabelField("Relic (Preview)", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("Stat (Preview)", EditorStyles.boldLabel);
 
             var so = new SerializedObject(stat);
             so.Update();

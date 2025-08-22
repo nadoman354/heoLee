@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fda872104b140e4d99dd4b54ef9849f, type: 3}
+  m_Name: MetaData_HealthRelic
+  m_EditorClassIdentifier: 
+  id: 1
+  sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  name: "\uCCB4\uB825\uC720\uBB3C"
+  description: "\uCCB4\uB825\uC744{MaxHp}\uB192\uC5EC\uC90D\uB2C8\uB2E4."
+  rarity: 0
+  stat: {fileID: 11400000, guid: 1a7acd41e6cc9394f912951ec02bc2ad, type: 2}
+  _className: HealthRelic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
