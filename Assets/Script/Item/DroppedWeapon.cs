@@ -4,7 +4,6 @@ public class DroppedWeapon : DroppedItem
 {
     public SO_WeaponMetaData meta;
     public IWeaponLogic original;
-    [SerializeField] private WeaponFactory weaponFactory;
 
     public override void Setup(ScriptableObject data)
     {
@@ -26,7 +25,7 @@ public class DroppedWeapon : DroppedItem
         if (!CanInteract(player)) return;
         var inv = player?.Inventory; if (inv == null) return;
 
-        var w = original ?? weaponFactory.Create(meta);
+/*        var w = original ?? LogicFactoryHub.WeaponFactory.Create(meta);*/
         if (inv.TryAddWeapon(w, meta)) PoolManager.Despawn(gameObject);
     }
 }

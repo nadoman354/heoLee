@@ -8,6 +8,8 @@ public class DroppedFactoryHub : MonoBehaviour, IDroppedFactoryHub
     [SerializeField] private DroppedWeaponFactory weaponFactory;
     [SerializeField] private DroppedRelicFactory relicFactory;
     [SerializeField] private DroppedConsumableFactory consumableFactory;
+    [SerializeField] private DroppedCurrencyFactory currencyFactory;
+    [SerializeField] private DroppedFieldItemFactory fieldItemFactory;
 
     void Awake()
     {
@@ -16,13 +18,15 @@ public class DroppedFactoryHub : MonoBehaviour, IDroppedFactoryHub
     }
 
     public DroppedItem SpawnFromId(ItemType t, string id, Vector3 spawnPos)
-        => t switch
-        {
-            ItemType.IWeaponLogic => weaponFactory.CreateFromId(id, spawnPos),
-            ItemType.BaseRelic => relicFactory.CreateFromId(id, spawnPos),
-            ItemType.Consumable => consumableFactory.CreateFromId(id, spawnPos),
-            _ => null
-        };
+    => t switch
+    {
+        ItemType.Weapon => weaponFactory.CreateFromId(id, spawnPos),
+        ItemType.Relic => relicFactory.CreateFromId(id, spawnPos),
+        ItemType.Consumable => consumableFactory.CreateFromId(id, spawnPos),
+        ItemType.Currency => currencyFactory.CreateFromId(id, spawnPos),
+        ItemType.FieldItem => fieldItemFactory.CreateFromId(id, spawnPos),
+        _ => null
+    };
 
     public DroppedItem SpawnFromWeapon(IWeaponLogic w, Vector3 spawnPos)
         => weaponFactory.CreateFromWeapon(w, spawnPos);

@@ -4,7 +4,6 @@ public class DroppedRelic : DroppedItem
 {
     public SO_RelicMetaData meta;
     public BaseRelic original;
-    [SerializeField] private LogicRelicFactory relicFactory;
 
     public override void Setup(ScriptableObject data)
     {
@@ -26,7 +25,7 @@ public class DroppedRelic : DroppedItem
         if (!CanInteract(player)) return;
         var inv = player?.Inventory; if (inv == null) return;
 
-        var v = original ?? relicFactory.Create(meta, player.Inventory);
+        var v = original ?? LogicFactoryHub.RelicFactory.Create(meta, player.Inventory);
         if (inv.TryAddRelic(v)) PoolManager.Despawn(gameObject);
     }
 }

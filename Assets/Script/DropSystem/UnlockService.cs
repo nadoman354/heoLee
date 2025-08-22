@@ -25,6 +25,15 @@ public class UnlockService : MonoBehaviour, IUnlockMask
 
     public List<string> FilterEligible(ItemType type, List<string> ids)
     {
+        // 무기/유물만 잠금 해제 대상. 나머지 타입은 통과.
+        if (type != ItemType.Weapon && type != ItemType.Relic)
+        {
+            var pass = new List<string>(ids?.Count ?? 0);
+            if (ids == null) return pass;
+            foreach (var id in ids) if (!string.IsNullOrEmpty(id)) pass.Add(id);
+            return pass;
+        }
+
         var res = new List<string>(ids?.Count ?? 0);
         if (ids == null) return res;
         foreach (var id in ids) if (!string.IsNullOrEmpty(id) && IsUnlocked(type, id)) res.Add(id);
@@ -59,8 +68,8 @@ public class UnlockService : MonoBehaviour, IUnlockMask
         idToType = new Dictionary<string, ItemType>(512);
         if (!metaCatalog) return;
 
-        foreach (var w in metaCatalog.Weapons) if (w && !string.IsNullOrEmpty(w.id)) idToType[w.id] = ItemType.IWeaponLogic;
-        foreach (var r in metaCatalog.Relics) if (r && !string.IsNullOrEmpty(r.id)) idToType[r.id] = ItemType.BaseRelic;
+        foreach (var w in metaCatalog.Weapons) if (w && !string.IsNullOrEmpty(w.id)) idToType[w.id] = ItemType.Weapon;
+        foreach (var r in metaCatalog.Relics) if (r && !string.IsNullOrEmpty(r.id)) idToType[r.id] = ItemType.Relic;
         foreach (var c in metaCatalog.Consumables) if (c && !string.IsNullOrEmpty(c.id)) idToType[c.id] = ItemType.Consumable;
     }
 }

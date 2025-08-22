@@ -5,6 +5,7 @@ public interface ILogicWeaponFactory
 {
     IWeaponLogic Create(SO_WeaponMetaData meta, WeaponView view, ICapabilities cap);
 }
+
 public sealed class LogicWeaponFactory : ILogicWeaponFactory
 {
     // 문자열 → Type 캐시

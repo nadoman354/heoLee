@@ -3,8 +3,8 @@ namespace enums
     public enum ItemType
     {
         None = 0,   // 미드롭 라인(“아무 것도 드롭 안 함”)
-        IWeaponLogic = 1,
-        BaseRelic = 2,
+        Weapon = 1,
+        Relic = 2,
         Consumable = 3,
         FieldItem = 4,
         Currency = 5

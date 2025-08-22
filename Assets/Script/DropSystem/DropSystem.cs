@@ -55,11 +55,11 @@ public class DropSystem : MonoBehaviour
         if (line.possibleItemIds == null || line.possibleItemIds.Count == 0) return;
 
         List<string> pool;
-        if (line.itemType == ItemType.BaseRelic)
+        if (line.itemType == ItemType.Relic)
         {
             var rarity = RollRelicRarity(table.rarityChances, stage, r);
             var byRarity = FilterRelicByRarity(line.possibleItemIds, rarity);
-            pool = unlock.FilterEligible(ItemType.BaseRelic, byRarity);
+            pool = unlock.FilterEligible(ItemType.Relic, byRarity);
         }
         else
         {
@@ -105,11 +105,11 @@ public class DropSystem : MonoBehaviour
             for (int i = 0; i < p.count; i++)
             {
                 List<string> pool;
-                if (p.e.itemType == ItemType.BaseRelic)
+                if (p.e.itemType == ItemType.Relic)
                 {
                     var rarity = RollRelicRarity(table.rarityChances, stage, r);  // 픽마다 등급 롤
                     var byRarity = FilterRelicByRarity(p.e.possibleItemIds, rarity);
-                    pool = unlock.FilterEligible(ItemType.BaseRelic, byRarity);
+                    pool = unlock.FilterEligible(ItemType.Relic, byRarity);
                 }
                 else
                 {
