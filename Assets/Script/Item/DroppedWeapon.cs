@@ -29,4 +29,16 @@ public class DroppedWeapon : DroppedItem
         var inv = player?.Inventory; if (inv == null) return;
         if (inv.TryAddWeapon(w, meta)) PoolManager.Despawn(gameObject);
     }
+
+    ///<summary>
+    /// 여기 아래로는 테. 스. 트. 코드입니다. 나중에 지워야 함
+    ///</summary>
+    /// 충돌 시 먹어지는 기능
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            OnPlayerInteract(collision.GetComponent<Player>());
+        }
+    }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "MetaData_Weapon", menuName = "Game/MetaData/WeaponType/Base")]
@@ -12,7 +13,7 @@ public class SO_WeaponMetaData : ScriptableObject
     public SO_StatData stat;
     [Space(10)]
     public AnimatorOverrideController attackClipOverride;
-    public AnimatorOverrideController spriteClipOverride;
+    public AnimatorController spriteClipOverride;
     public float zRotationOffset = 0f;
     public SO_SkillMetaData[] skillData = new SO_SkillMetaData[2];
     [Space(10)]

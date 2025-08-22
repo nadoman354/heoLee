@@ -1,11 +1,20 @@
 using System;
+using UnityEditor.Animations;
 using UnityEngine;
 
-public struct SetAnimatorInfo { /* 필요 시 확장 (레이어, 블렌드 등) */ }
+public struct SetAnimatorInfo { /* 필요 시 확장 (레이어, 블렌드 등) */
+    public float zRotationOffset;
+    public SetAnimatorInfo(float zRotationOffset)
+    {
+        this.zRotationOffset = zRotationOffset;
+    }
+}
 
 public class WeaponView : MonoBehaviour
 {
-    [SerializeField] Animator animator;
+    [SerializeField] Animator motionAnimator;
+    [SerializeField] Animator spriteAnimator;
+    [SerializeField] Transform renderOffsetTransform;
 
     public event Action OnAE_Attack;
     public event Action OnAE_Skill1;
@@ -16,16 +25,21 @@ public class WeaponView : MonoBehaviour
     static readonly int H_Skill1 = Animator.StringToHash("Skill1");
     static readonly int H_Skill2 = Animator.StringToHash("Skill2");
 
-    public void SetAnimator(AnimatorOverrideController controller, in SetAnimatorInfo _)
-        => animator.runtimeAnimatorController = controller;
+    public void SetAnimator(AnimatorOverrideController controller, in SetAnimatorInfo _, AnimatorController spriteAnimator)
+    {
+        if (controller == null) throw new NullReferenceException(nameof(controller));
+        motionAnimator.runtimeAnimatorController = controller;
+        this.spriteAnimator.runtimeAnimatorController = spriteAnimator;
+        renderOffsetTransform.rotation = Quaternion.Euler(0,0, _.zRotationOffset);
+    }
 
     public void TriggerAttackAnim(int comboCnt)
     {
-        animator.SetInteger(H_AtkCnt, comboCnt);
-        animator.SetTrigger(H_Attack);
+        motionAnimator.SetInteger(H_AtkCnt, comboCnt);
+        motionAnimator.SetTrigger(H_Attack);
     }
-    public void TriggerSkill1Anim() => animator.SetTrigger(H_Skill1);
-    public void TriggerSkill2Anim() => animator.SetTrigger(H_Skill2);
+    public void TriggerSkill1Anim() => motionAnimator.SetTrigger(H_Skill1);
+    public void TriggerSkill2Anim() => motionAnimator.SetTrigger(H_Skill2);
 
     // Animation Events (클립에서 호출)
     public void AE_Attack() => OnAE_Attack?.Invoke();

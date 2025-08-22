@@ -12,17 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aac81587178dfb4f885280c2c6ff861, type: 3}
   m_Name: MetaData_DiaSword
   m_EditorClassIdentifier: 
-  id: 
-  sprite: {fileID: 0}
-  name: 
-  description: 
-  stat: {fileID: 0}
+  id: DiaSword
+  sprite: {fileID: 21300000, guid: 44a054df1702e39458b7072b08d0f212, type: 3}
+  name: "\uB2E4\uC774\uC544 \uAC80"
+  description: "\uB2E4\uC774\uC544 \uB450 \uAC1C\uC640 \uB9C9\uB300\uAE30 \uD558\uB098"
+  stat: {fileID: 11400000, guid: e7e455a66ff0a19418beaf446cf4fa71, type: 2}
   attackClipOverride: {fileID: 0}
   spriteClipOverride: {fileID: 0}
-  zRotationOffset: 0
+  zRotationOffset: 45
   skillData:
-  - {fileID: 0}
-  - {fileID: 0}
-  _className: 
-  MaxAtkCount: 0
-  AtkEffectList: []
+  - {fileID: 11400000, guid: e3cd43d1fc7337748928b95b666222e2, type: 2}
+  - {fileID: 11400000, guid: e3cd43d1fc7337748928b95b666222e2, type: 2}
+  _className: DiaSword, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  MaxAtkCount: 2
+  AtkEffectList:
+  - {fileID: 7308798674786888062, guid: e2414833093a4494ba35b63e60f3bedd, type: 3}
+  - {fileID: 7308798674786888062, guid: 6db55f3114062384a82d04f17b915bd2, type: 3}
+  - {fileID: 7308798674786888062, guid: a7e2b166d661d1b409e117e0eb95d723, type: 3}
