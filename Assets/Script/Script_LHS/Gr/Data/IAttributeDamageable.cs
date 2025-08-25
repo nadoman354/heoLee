@@ -7,6 +7,5 @@ using Core.Interfaces;
 
 public interface IAttributeDamageable
 {
-    void ApplyAttributeDamage(AttributeType type, float baseDamage, float gaugeAmount);
     void ApplyAttributeDamage(AttributeType type, float baseDamage, float gaugeAmount, IAttributeModifierProvider provider);
 }

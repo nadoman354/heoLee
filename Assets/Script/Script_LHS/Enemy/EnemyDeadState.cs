@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DeadState : IEnemyState
+public class EnemyDeadState : IEnemyState
 {
     public void Enter(EnemyBase enemy)
     {

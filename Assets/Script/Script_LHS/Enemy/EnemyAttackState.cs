@@ -1,3 +1,4 @@
+using Core.Interfaces;
 using UnityEngine;
 
 public sealed class EnemyAttackState : IEnemyState
@@ -17,18 +18,29 @@ public sealed class EnemyAttackState : IEnemyState
 
         // 쿨다운 체크
         enemy.AttackTimer -= Time.deltaTime;
-        if (enemy.AttackTimer <= 0f)
-        {
-            enemy.AttackTimer = enemy.AttackCooldown;
+        if (enemy.AttackTimer > 0f) { return; }
 
-            // 아주 단순한 근접 공격 예시: 플레이어에 데미지 적용
-            var targetDamageable = enemy.Target.GetComponent<IDamageable>();
-            if (targetDamageable != null)
-            {
-                float dmg = enemy.Damage;
-                targetDamageable.TakeDamage(dmg);
-                // 이 자리에 히트 리액션/사운드/이펙트 등 호출
-            }
+        enemy.AttackTimer = enemy.AttackCooldown;
+
+        // ★ 변경: 항상 IAttributeDamageable 경유 -> 실패 시 IDamageable로 폴백
+        var target = enemy.Target;
+
+        var attr = target.GetComponent<IAttributeDamageable>();                // 속성/게이지/온히트/유물 경로
+        if (attr != null)
+        {
+            var provider = enemy.GetComponent<IAttributeModifierProvider>();    // 몬스터는 대부분 null일 것
+            attr.ApplyAttributeDamage(AttributeType.None, enemy.Damage, 0f, provider);
+
+            // TODO: 히트 리액션/사운드/이펙트
+            return;
+        }
+
+        // 폴백: 속성 경로가 없으면 HP 직통
+        var hp = target.GetComponent<IDamageable>();
+        if (hp != null)
+        {
+            hp.TakeDamage(enemy.Damage);
+            // TODO: 히트 리액션/사운드/이펙트
         }
     }
 

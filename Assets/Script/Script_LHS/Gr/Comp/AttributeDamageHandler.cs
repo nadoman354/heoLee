@@ -116,10 +116,4 @@ public class AttributeDamageHandler : MonoBehaviour, IAttributeDamageable
         // 필요하다면 triggered/type을 이벤트로 내보내 UI/로그에 쓰세요.
         // OnAttributeTriggered?.Invoke(req.type, triggered);
     }
-
-    // 사용 안 하면 삭제 권장(호출 시 예외 발생하므로)
-    public void ApplyAttributeDamage(AttributeType type, float baseDamage, float gaugeAmount)
-    {
-        throw new NotImplementedException();
-    }
 }
