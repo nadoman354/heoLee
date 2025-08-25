@@ -42,33 +42,33 @@ MonoBehaviour:
     possibleItemIds:
     - DiaSword
     dropCountChances:
-    - count: 1
+    - count: 6
       probability: 1
   - itemType: 2
     possibleItemIds:
     - 1
     - 2
     dropCountChances:
-    - count: 1
+    - count: 6
       probability: 1
   - itemType: 3
     possibleItemIds:
     - 6
     dropCountChances:
-    - count: 1
+    - count: 6
       probability: 1
   - itemType: 4
     possibleItemIds:
     - q
     - w
     dropCountChances:
-    - count: 1
+    - count: 6
       probability: 1
   - itemType: 5
     possibleItemIds:
-    - 4
+    - 9
     dropCountChances:
-    - count: 1
+    - count: 6
       probability: 1
   stage2Loot:
   - itemType: 1
@@ -99,7 +99,7 @@ MonoBehaviour:
       probability: 1
   - itemType: 5
     possibleItemIds:
-    - 4
+    - 9
     dropCountChances:
     - count: 1
       probability: 1
@@ -132,7 +132,7 @@ MonoBehaviour:
       probability: 1
   - itemType: 5
     possibleItemIds:
-    - 4
+    - 9
     dropCountChances:
     - count: 1
       probability: 1

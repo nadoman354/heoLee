@@ -27,5 +27,5 @@ MonoBehaviour:
   currencies:
   - {fileID: 11400000, guid: 38aef2680d03895498359d3b7ace7544, type: 2}
   fieldItems:
-  - {fileID: 11400000, guid: 1e4cde75683079f4e99ffa70a5d49956, type: 2}
-  - {fileID: 11400000, guid: 1e0721a9cff364048a6ef56aa50a3433, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}

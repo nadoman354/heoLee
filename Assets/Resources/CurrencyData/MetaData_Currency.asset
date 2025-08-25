@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9a2e4918b4cd447b8ac2ab2797bda1, type: 3}
   m_Name: MetaData_Currency
   m_EditorClassIdentifier: 
-  id: 6
-  sprite: {fileID: 0}
+  id: 9
+  sprite: {fileID: -1740653875, guid: af1c567bd1e4a69429f60937caed426f, type: 3}
   name: 
   description: 
   amountPerPickup: 1
