@@ -7,6 +7,7 @@ public sealed class EnemyAttackState : IEnemyState
 
     public void Tick(EnemyBase enemy)
     {
+        Debug.Log("АјАн");
         if (!enemy.Target) { enemy.ChangeState(new EnemyIdleState()); return; }
 
         float dist = Vector2.Distance(enemy.transform.position, enemy.Target.position);

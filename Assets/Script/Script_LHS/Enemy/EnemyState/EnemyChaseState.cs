@@ -7,6 +7,7 @@ public sealed class EnemyChaseState : IEnemyState
 
     public void Tick(EnemyBase enemy)
     {
+        Debug.Log("추적해 발ㄹ러");
         if (!enemy.Target) { enemy.ChangeState(new EnemyIdleState()); return; }
 
         Vector3 to = (enemy.Target.position - enemy.transform.position).normalized;

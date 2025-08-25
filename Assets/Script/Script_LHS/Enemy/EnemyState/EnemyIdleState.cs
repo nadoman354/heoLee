@@ -6,6 +6,7 @@ public sealed class EnemyIdleState : IEnemyState
 
     public void Tick(EnemyBase enemy)
     {
+        Debug.Log("´ë±â");
         if (!enemy.Target) return;
         float dist = Vector2.Distance(enemy.transform.position, enemy.Target.position);
         if (dist <= enemy.AggroRange)
