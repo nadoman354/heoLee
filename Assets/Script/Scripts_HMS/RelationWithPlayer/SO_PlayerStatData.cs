@@ -9,6 +9,7 @@ namespace Stats
     {
         public readonly static string MaxHp = "MaxHp";
         public readonly static string Damage = "Damage";
+        public readonly static string MoveSpeed = "MoveSpeed";
     }
 }
 
@@ -31,5 +32,6 @@ public class SO_PlayerStatData : SO_StatData
     {
         base.Reset();
         statList.Add(new Stat(Stats.BasicPlayerStat.MaxHp, 100));
+        statList.Add(new Stat(Stats.BasicPlayerStat.MoveSpeed, 5));
     }
 }

@@ -131,7 +131,8 @@ public class WeaponContainer : IWeaponContainer
         if (dropTarget == null) return;
 
         // 1) 무기 정리: 이벤트 해지/코루틴 정리/풀 반납 등
-        dropTarget.Dispose();
+        //dropTarget.Dispose();
+        DroppedFactoryHub.I.SpawnFromWeapon(dropTarget, weaponView.transform.position);
 
         // 2) 슬롯 비우기
         weapon[index] = null;
@@ -238,4 +239,5 @@ public class WeaponContainer : IWeaponContainer
 
     // (선택) 현재 무기 로직을 외부에서 직접 참조하고 싶을 때
     public IWeaponLogic Current => weapon[curEquippedWeaponIndex];
+    public IWeaponLogic Else => weapon[(curEquippedWeaponIndex == FIRST_WEAPON_IDX) ? SECOND_WEAPON_IDX : FIRST_WEAPON_IDX];
 }
