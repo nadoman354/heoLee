@@ -18,17 +18,6 @@ public class DiaSword : IWeaponLogic, IAttackableWeapon, ISkillAnimDriven, IModi
     float lastAtkTime = 0;
 
     ISkillLogic[] baseSkills = new ISkillLogic[2];
-
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-            OnKeyDown();
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            Skill1KeyDown();
-        }
-        Tick(Time.deltaTime);
-    }
     public void PlayAttackAnim()
     {
         view.TriggerAttackAnim(curAttackCount);

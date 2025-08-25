@@ -39,6 +39,7 @@ public class Player : MonoBehaviour, IModifierSink
         //RelicTest();
         inventory.Tick(Time.deltaTime);
         health.Tick();
+        GetInputTEST();
     }
 
     public void AddRelic(BaseRelic relic) => inventory.TryAddRelic(relic);
@@ -51,4 +52,16 @@ public class Player : MonoBehaviour, IModifierSink
     //-------- 소비 아이템 ----------
     public void UseConsumableItem(int idx) => inventory.UseConsumableItem(idx);
     bool TryAddConsumableItem(IConsumableItem item, out int placedIndex) => inventory.TryAddConsumable(item, out placedIndex);
+    ///<summary>
+    /// TEST CODE
+    ///</summary>
+    void GetInputTEST()
+    {
+        if (Input.GetMouseButtonDown(0))
+            inventory.Weapons.OnKeyDown();
+        if (Input.GetMouseButtonDown(1))
+            inventory.Weapons.Skill1KeyDown();
+        if (Input.GetKeyDown(KeyCode.R))
+            inventory.Weapons.SwapWeapon();
+    }
 }

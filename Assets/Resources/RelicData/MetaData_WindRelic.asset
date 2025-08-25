@@ -17,5 +17,5 @@ MonoBehaviour:
   name: "\uC2E0\uC18D\uC758 \uC720\uBB3C"
   description: "\uACF5\uACA9\uC18D\uB3C4\uAC00 {AtkSpeed}%\uC99D\uAC00\uD569\uB2C8\uB2E4."
   rarity: 1
-  stat: {fileID: 11400000, guid: b81d729dbc9f2134abda5c3329e3d767, type: 2}
+  stat: {fileID: 11400000, guid: 49b52a3d0d4bf2f478635fd768bc9336, type: 2}
   _className: WindRelic, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null

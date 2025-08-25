@@ -177,7 +177,7 @@ PrefabInstance:
     - target: {fileID: 1139075364554359897, guid: 54b192b3ca19f8949b58521ff82a7f9f, type: 3}
       propertyPath: meta
       value: 
-      objectReference: {fileID: 11400000, guid: 423fbcbf2b94414489095ff289bde031, type: 2}
+      objectReference: {fileID: 11400000, guid: 8d032d7d0294eee4bbf82044f50d4277, type: 2}
     - target: {fileID: 1139075364554359897, guid: 54b192b3ca19f8949b58521ff82a7f9f, type: 3}
       propertyPath: interactCollider
       value: 
