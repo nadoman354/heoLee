@@ -15,9 +15,8 @@ public class DroppedFieldItem : DroppedItem
     public override void OnPlayerInteract(Player player)
     {
         if (!CanInteract(player)) return;
-        if (!meta || !meta.effect) return;
 
-        if (meta.effect.Apply(player))
+        if (meta.Apply(player))
         {
             // ¼º°ø ½Ã ¼Ò¸ê
             PoolManager.Despawn(gameObject);

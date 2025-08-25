@@ -20,7 +20,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 11400000, guid: 30cd69a0c47df954e81a83da9d91c28a, type: 2}
   relics:
-  - {fileID: 11400000, guid: 546929d3de8525348b29d83525d42c44, type: 2}
+  - {fileID: 11400000, guid: 5b5d26f92bda7164caae7d73f57c43b9, type: 2}
   - {fileID: 11400000, guid: 8d032d7d0294eee4bbf82044f50d4277, type: 2}
   consumables:
   - {fileID: 11400000, guid: fbb084b2079307546b3f066b56f47268, type: 2}
