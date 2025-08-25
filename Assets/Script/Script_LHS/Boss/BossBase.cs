@@ -39,7 +39,9 @@ public class BossBase : MonoBehaviour, IDamageable, IStaggerable
     void Awake()
     {
         stats = new StatBlock(); stats.Init(bossStatData);
-        health = new Health(); health.Init(stats);
+        health = new Health(); health.Init(stats, Stats.BasicBossStat.MaxHp,
+            Stats.BasicBossStat.HealthRegenPerSec,
+            MaxChangePolicy.Clamp);
     }
 
     void Start()
@@ -48,7 +50,7 @@ public class BossBase : MonoBehaviour, IDamageable, IStaggerable
 
         float maxG = stats.GetStat(Stats.BasicBossStat.GroggyMax);
         float dur = CombatResolver.ComputeGroggyDuration(stats); // 보스 스탯 기반 기본 지속 계산
-        //groggy = new GroggyMeter(maxG, dur, decayPerSec: 0f, lockoutAfter: 1.2f); 
+        groggy = new GroggyMeter(maxG, dur, decayPerSec: 0f, lockoutAfter: 1.2f); 
         groggy.SetDurationFinal(dur);
 
         groggy.OnEnter += () => { runner?.Pause(); groggyTimer = 0f; Debug.Log("&#x1f4ab; Groggy!"); };

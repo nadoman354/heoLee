@@ -46,6 +46,4 @@ public sealed class EnemyAttackState : IEnemyState
     }
 
     public void Exit(EnemyBase enemy) { }
-
-    public void Update(EnemyBase enemy) { }
 }

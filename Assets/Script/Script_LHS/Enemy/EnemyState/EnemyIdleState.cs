@@ -15,5 +15,5 @@ public sealed class EnemyIdleState : IEnemyState
 
     public void Exit(EnemyBase enemy) { }
 
-    public void Update(EnemyBase enemy) { }
+    public void Update(EnemyBase enemy) { Debug.Log("´ë±â"); }
 }

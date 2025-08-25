@@ -125,7 +125,7 @@ public class Player : MonoBehaviour, IModifierSink
         stats = new StatBlock();
         stats.Init(data);
         health = new Health();
-        health.Init(stats);
+        health.Init(stats, Stats.BasicPlayerStat.MaxHp, null, MaxChangePolicy.Clamp);
         inventory = new Inventory(this, GetComponentInChildren<WeaponView>());
         weaponController = GetComponentInChildren<WeaponController>();
     }

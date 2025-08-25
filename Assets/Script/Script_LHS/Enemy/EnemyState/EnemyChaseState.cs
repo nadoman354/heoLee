@@ -22,6 +22,4 @@ public sealed class EnemyChaseState : IEnemyState
     }
 
     public void Exit(EnemyBase enemy) { }
-
-    public void Update(EnemyBase enemy) { }
 }

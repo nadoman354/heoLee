@@ -21,3 +21,5 @@ MonoBehaviour:
     value: 2
   - name: Enemy.HealthRegenPerSec
     value: 0
+  - name: Boss.MaxHp
+    value: 55

@@ -11,6 +11,6 @@
 
     public void Update(EnemyBase enemy)
     {
-        currentState?.Update(enemy);     // 현재 상태 프레임마다 업데이트
+        currentState?.Tick(enemy);     // 현재 상태 프레임마다 업데이트
     }
 }

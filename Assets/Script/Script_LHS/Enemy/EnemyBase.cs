@@ -44,9 +44,14 @@ public class EnemyBase : MonoBehaviour, IDamageable
         stats.Init(statData);
 
         health = new Health();
-        health.Init(stats);
+        health.Init(stats, Stats.BasicEnemyStat.MaxHp, Stats.BasicEnemyStat.HealthRegenPerSec, MaxChangePolicy.Clamp);
 
         health.OnDeath += OnDeath;
+
+        //테스트
+        Debug.Log($"[StatCheck] Enemy.MaxHp = {stats.GetStat(Stats.BasicEnemyStat.MaxHp)}");
+        Debug.Log($"[StatCheck] Boss.MaxHp  = {stats.GetStat(Stats.BasicBossStat.MaxHp)}");
+        Debug.Log($"[StatCheck] statData = {statData?.name}");
     }
 
     protected virtual void Start()
@@ -55,12 +60,15 @@ public class EnemyBase : MonoBehaviour, IDamageable
         target = player ? player.transform : null;
 
         ChangeState(new EnemyIdleState());
+
+        //테스트
+        Debug.Log("HP" + HpCurrent);
     }
 
     protected virtual void Update()
     {
         health.Tick();
-        current?.Update(this);
+        current?.Tick(this);
     }
 
     // ── FSM ─────────────────────────────────────────────────
@@ -89,7 +97,8 @@ public class EnemyBase : MonoBehaviour, IDamageable
     protected virtual void OnDeath()
     {
         // 드랍/사운드/이펙트/풀링 반환 등
-        Destroy(gameObject);
+        Debug.Log("[Enemy] OnDeath fired");        // ★ 죽음 이벤트 실제 호출 여부 확인
+        ChangeState(new EnemyDeadState());  // 죽음 상태로 전환
     }
 
 #if UNITY_EDITOR
@@ -104,6 +113,33 @@ public class EnemyBase : MonoBehaviour, IDamageable
     public void TakeDamage(int dmg)
     {
         throw new System.NotImplementedException();
+    }
+#endif
+
+    // EnemyBase.cs (클래스 내부 아무 곳) [개발자용]]]]]]]]]]]]]]]]]]]]]]   
+#if UNITY_EDITOR
+    [ContextMenu("Debug/Kill Now (Force)")]
+    private void __DebugKillNowForce()
+    {
+        Debug.Log($"[KillNow] before HP={HpCurrent}");
+
+        // 1) 아직 살아있으면 큰 대미지로 사망 유도
+        if (HpCurrent > 0f)
+            //TakeDamage(HpCurrent + 9999f);   // float 오버로드 명시
+
+        // 2) 그래도 DeadState가 안 들어갔다면(이미 죽어 있었다면) 강제 진입
+        OnDeath();
+
+        Debug.Log($"[KillNow] after  HP={HpCurrent}");
+    }
+#endif
+
+#if UNITY_EDITOR
+    [ContextMenu("Debug/Print Health")]
+    private void __DebugPrintHealth()
+    {
+        // Health 클래스에 IsDead가 있다면 같이 출력(없으면 이 줄은 주석)
+        Debug.Log($"[PrintHealth] HP={HpCurrent}/{HpMax}");
     }
 #endif
 }
